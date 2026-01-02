@@ -8,8 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       padding: 5px;
-      max-width: 100%;
-      margin: 0;
+      max-width: 700px;
+      margin: 0 auto;
       font-size: 12px;
       box-sizing: border-box;
       overflow-x: hidden;
@@ -22,8 +22,8 @@
       background-color: #f9f9f9;
       border: 1px solid #ccc;
       border-radius: 6px;
-      width: 100%;
-      max-width: 100%;
+      width: auto;
+      max-width: 650px;
       box-sizing: border-box;
     }
 
@@ -49,8 +49,8 @@
 
     .location-row {
       display: table !important;
-      width: 100% !important;
-      table-layout: fixed !important;
+      width: auto !important;
+      table-layout: auto !important;
       border-collapse: collapse !important;
       margin-bottom: 8px !important;
     }
@@ -58,8 +58,9 @@
     .location-group {
       display: table-cell !important;
       vertical-align: top !important;
-      padding: 0 3px !important;
-      width: 33.33% !important;
+      padding: 0 5px !important;
+      width: auto !important;
+      white-space: nowrap !important;
     }
 
     .location-group label {
@@ -71,7 +72,9 @@
 
     .location-group select,
     .location-group input {
-      width: 100% !important;
+      width: auto !important;
+      min-width: 100px !important;
+      max-width: 150px !important;
       padding: 5px !important;
       border: 1px solid #ccc !important;
       border-radius: 3px !important;
