@@ -7,37 +7,22 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 5px;
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 12px;
-      box-sizing: border-box;
-      overflow-x: hidden;
+      padding: 10px;
+      max-width: 1000px;
+      margin: auto;
+      font-size: 16px;
     }
 
     .calculator {
       display: none;
-      padding: 6px;
-      margin: 10px auto 0 auto;
+      padding: 8px;
+      margin: 20px auto 0 auto;
       background-color: #f9f9f9;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      width: auto;
-      max-width: 650px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 700px;
       box-sizing: border-box;
-    }
-
-    h1 {
-      font-size: 16px !important;
-      margin: 8px 0 !important;
-      padding: 0 !important;
-      text-align: center !important;
-    }
-
-    h2 {
-      font-size: 14px !important;
-      margin: 8px 0 !important;
-      padding: 0 !important;
     }
     @media (max-width: 768px) {
       .calculator {
@@ -48,79 +33,52 @@
     }
 
     .location-row {
-      display: table !important;
-      width: auto !important;
-      table-layout: auto !important;
-      border-collapse: collapse !important;
-      margin-bottom: 8px !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-bottom: 0.5rem;
+      align-items: flex-start;
     }
 
     .location-group {
-      display: table-cell !important;
-      vertical-align: top !important;
-      padding: 0 5px !important;
-      width: auto !important;
-      white-space: nowrap !important;
+      flex: 0 0 auto;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
     }
 
     .location-group label {
-      display: block !important;
-      margin-bottom: 3px !important;
-      font-weight: bold !important;
-      font-size: 11px !important;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     .location-group select,
     .location-group input {
-      width: auto !important;
-      min-width: 100px !important;
-      max-width: 150px !important;
-      padding: 5px !important;
-      border: 1px solid #ccc !important;
-      border-radius: 3px !important;
-      font-size: 11px !important;
-      box-sizing: border-box !important;
-    }
-
-    /* Prevent Google Sites from stacking items */
-    .calculator .location-row {
-      display: table !important;
-    }
-
-    .calculator .location-group {
-      display: table-cell !important;
-    }
-
-    /* Table layout for input rows */
-    .input-row {
-      display: table !important;
-      width: 100% !important;
-      margin-bottom: 8px !important;
-    }
-
-    .input-row > div {
-      display: table-cell !important;
-      padding-right: 10px !important;
-      vertical-align: bottom !important;
-    }
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
     }
 
     .button-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 15px;
     }
 
     .button-group button {
-      padding: 6px 10px;
+      padding: 10px 15px;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 11px;
-      min-width: 70px;
+      font-size: 14px;
+      min-width: 80px;
     }
 
     .button-group button:hover {
@@ -310,131 +268,11 @@
     
     #screenQuantity, #embQuantity, #dtfQuantity, #dtgQuantity, #fulfillQuantity,
     #screenApparelCost, #embApparelCost, #dtfApparelCost, #dtgApparelCost {
-      padding: 5px;
+      padding: 8px;
       border: 1px solid #ccc;
-      border-radius: 3px;
-      font-size: 11px;
-      max-width: 60px;
-      width: 100%;
-    }
-
-    /* Responsive Design for Tablets and Phones */
-    @media screen and (max-width: 768px) {
-      /* Tablet adjustments */
-      .calculator {
-        max-width: 100% !important;
-        padding: 12px !important;
-      }
-
-      .location-row {
-        flex-direction: column !important;
-        gap: 12px !important;
-      }
-
-      .location-group {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      #screenQuantity, #embQuantity, #dtfQuantity, #dtgQuantity, #fulfillQuantity,
-      #screenApparelCost, #embApparelCost, #dtfApparelCost, #dtgApparelCost {
-        max-width: 150px !important;
-      }
-
-      .button-group button {
-        flex: 1 1 calc(50% - 4px) !important;
-        min-width: 120px !important;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      /* Phone adjustments */
-      body {
-        font-size: 14px !important;
-      }
-
-      .calculator {
-        padding: 8px !important;
-        margin: 10px auto 0 auto !important;
-      }
-
-      h1 {
-        font-size: 20px !important;
-      }
-
-      h2 {
-        font-size: 18px !important;
-      }
-
-      .tab-buttons {
-        flex-direction: column !important;
-        gap: 8px !important;
-      }
-
-      .tab-buttons button {
-        width: 100% !important;
-        font-size: 14px !important;
-        padding: 10px !important;
-      }
-
-      .location-row {
-        flex-direction: column !important;
-        gap: 10px !important;
-      }
-
-      .location-group {
-        width: 100% !important;
-      }
-
-      #screenQuantity, #embQuantity, #dtfQuantity, #dtgQuantity, #fulfillQuantity,
-      #screenApparelCost, #embApparelCost, #dtfApparelCost, #dtgApparelCost {
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      /* Stack flex containers vertically on phone */
-      div[style*="display: flex"] {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-      }
-
-      div[style*="display: flex"] > div {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      .button-group {
-        flex-direction: column !important;
-      }
-
-      .button-group button {
-        width: 100% !important;
-        margin-bottom: 8px !important;
-      }
-
-      /* Make dropdowns and inputs full width on phone */
-      select, input[type="number"] {
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      .output-box {
-        font-size: 13px !important;
-        padding: 12px !important;
-      }
-    }
-
-    /* Landscape phone orientation */
-    @media screen and (max-width: 768px) and (orientation: landscape) {
-      .tab-buttons {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-      }
-
-      .tab-buttons button {
-        flex: 1 1 calc(33.33% - 8px) !important;
-        min-width: 100px !important;
-      }
+      border-radius: 4px;
+      font-size: 14px;
+      max-width: 180px;
     }
     .fulfillment-grid {
       display: grid;
@@ -478,6 +316,10 @@
 </head>
 <body>
 
+  <!-- Logo (Optional) -->
+  <div class="logo">
+    <img src="Affordable Printing - Horizontal 2 wide.jpg" alt="Affordable Printing Logo" style="max-width: 300px; height: auto; display: block; margin: 0 auto 20px auto;" />
+  </div>
 
   <!-- Remove Select a Calculator heading and label -->
   <!-- <h2>Select a Calculator</h2> -->
@@ -507,7 +349,7 @@
     <div style="display: flex; align-items: flex-end; gap: 16px; margin-bottom: 8px;">
       <div style="flex: 0 0 auto;">
         <label for="screenQuantity">Quantity:</label>
-        <input type="number" id="screenQuantity" min="1" placeholder="Enter quantity" />
+        <input type="number" id="screenQuantity" min="6" placeholder="Enter quantity (min 6)" />
       </div>
       <div style="flex: 0 0 auto;">
         <label for="screenApparelCost">Apparel Cost (optional):</label>
@@ -523,22 +365,6 @@
         <label for="nonStandardCheckbox" style="display: block;">Non Standard Location</label>
         <input type="checkbox" id="nonStandardCheckbox" /> <span for="nonStandardCheckbox">Yes</span>
       </div>
-      <div style="flex: 0 0 auto;">
-        <label for="colorChangeSelect" style="display: block;">Color Changes:</label>
-        <select id="colorChangeSelect" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
-          <option value="0">None</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
     </div>
 
     <!-- Row 1 -->
@@ -552,7 +378,7 @@
         <select id="screenLoc2"></select>
       </div>
       <div class="location-group" id="screenGroup3">
-        <label for="screenLoc3">Right Chest:</label>
+        <label for="screenLoc3">Back:</label>
         <select id="screenLoc3"></select>
       </div>
     </div>
@@ -568,40 +394,8 @@
         <select id="screenLoc5"></select>
       </div>
       <div class="location-group" id="screenGroup6">
-        <label for="screenLoc6">Back:</label>
+        <label for="screenLoc6">Right Chest:</label>
         <select id="screenLoc6"></select>
-      </div>
-    </div>
-
-    <!-- Transfer Numbers Row -->
-    <div style="display: flex; align-items: flex-end; gap: 16px; margin-top: 15px; margin-bottom: 8px;">
-      <div style="flex: 0 0 auto;">
-        <label for="screenTransferNumbers" style="display: block;">Transfer Numbers:</label>
-        <select id="screenTransferNumbers" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 200px;">
-          <option value="">-- None --</option>
-          <option value="3.00">2" to 8" tall ($3.00)</option>
-          <option value="4.00">10" to 12" tall ($4.00)</option>
-        </select>
-      </div>
-      <div style="flex: 0 0 auto;">
-        <label for="screenTransferCount" style="display: block;">Number of Transfers:</label>
-        <input type="number" id="screenTransferCount" min="0" placeholder="Enter quantity" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 120px;" />
-      </div>
-    </div>
-
-    <!-- Transfer Names Row -->
-    <div style="display: flex; align-items: flex-end; gap: 16px; margin-bottom: 8px;">
-      <div style="flex: 0 0 auto;">
-        <label for="screenTransferNames" style="display: block;">Transfer Names:</label>
-        <select id="screenTransferNames" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 200px;">
-          <option value="">-- None --</option>
-          <option value="4.00">Up to 1" tall ($4.00)</option>
-          <option value="5.00">Over 1" tall ($5.00)</option>
-        </select>
-      </div>
-      <div style="flex: 0 0 auto;">
-        <label for="screenTransferNameCount" style="display: block;">Number of Names:</label>
-        <input type="number" id="screenTransferNameCount" min="0" placeholder="Enter quantity" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 120px;" />
       </div>
     </div>
 
@@ -658,54 +452,6 @@
       <div class="location-group" id="embGroup6">
         <label for="embLoc6">Back:</label>
         <select id="embLoc6"></select>
-      </div>
-      <div class="location-group">
-        <label for="embThreadColorChange">Thread Color Changes:</label>
-        <select id="embThreadColorChange" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
-          <option value="0">None</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Embroidered Names Row -->
-    <div style="display: flex; align-items: flex-end; gap: 16px; margin-top: 15px; margin-bottom: 8px;">
-      <div style="flex: 0 0 auto;">
-        <label for="embNameSize" style="display: block;">Embroidered Names:</label>
-        <select id="embNameSize" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 180px;">
-          <option value="">-- None --</option>
-          <option value="5.50">Up to 1" tall ($5.50)</option>
-          <option value="7.50">Over 1" tall ($7.50)</option>
-        </select>
-      </div>
-      <div style="flex: 0 0 auto;">
-        <label for="embNameCount" style="display: block;">Number of Names:</label>
-        <input type="number" id="embNameCount" min="0" placeholder="Enter number" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 120px;" />
-      </div>
-    </div>
-
-    <!-- Sewing Patches Row -->
-    <div style="display: flex; align-items: flex-end; gap: 16px; margin-bottom: 8px;">
-      <div style="flex: 0 0 auto;">
-        <label for="embPatchType" style="display: block;">Sewing Patches:</label>
-        <select id="embPatchType" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 200px;">
-          <option value="">-- None --</option>
-          <option value="sp">SP Provided Patches</option>
-          <option value="we">We Provide Patches</option>
-        </select>
-      </div>
-      <div style="flex: 0 0 auto;">
-        <label for="embPatchCount" style="display: block;">Number of Patches:</label>
-        <input type="number" id="embPatchCount" min="0" placeholder="Enter number" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; max-width: 120px;" />
       </div>
     </div>
 
@@ -789,18 +535,20 @@
       </div>
     </div>
 
-    <!-- Apparel Type Row -->
-    <div style="display: flex; align-items: flex-end; gap: 16px; margin-bottom: 8px;">
-      <div style="flex: 0 0 auto; margin-bottom: 2px;">
-        <label style="display: block; margin-bottom: 5px;">Apparel Type:</label>
-        <label style="display: flex; align-items: center; gap: 5px; font-weight: normal;">
-          <input type="checkbox" id="dtgPreTreated" onchange="handleDTGApparelType('pre')" /> Pre-treated Apparel
+    <div style="margin-bottom: 10px;">
+      <label style="font-weight: bold; display: block; margin-bottom: 5px;">Apparel Type:</label>
+      <label style="margin-right: 20px; cursor: pointer;">
+        <input type="radio" name="dtgApparelType" value="nonpretreated" checked onchange="updateDTGDropdowns()" /> Non Pre-Treated Shirts
+      </label>
+      <label style="cursor: pointer;">
+        <input type="radio" name="dtgApparelType" value="pretreated" onchange="updateDTGDropdowns()" /> Pre-Treated Shirts
+      </label>
+      <div id="dtgGarmentColorGroup" style="margin-top: 8px; margin-left: 20px;">
+        <label style="margin-right: 15px; cursor: pointer;">
+          <input type="radio" name="dtgGarmentColor" value="dark" checked onchange="updateDTGDropdowns()" /> Dark Garments
         </label>
-      </div>
-      <div style="flex: 0 0 auto; margin-bottom: 2px;">
-        <label style="display: block; margin-bottom: 5px;">&nbsp;</label>
-        <label style="display: flex; align-items: center; gap: 5px; font-weight: normal;">
-          <input type="checkbox" id="dtgNonPreTreated" onchange="handleDTGApparelType('non')" /> Non Pre-treated Apparel
+        <label style="cursor: pointer;">
+          <input type="radio" name="dtgGarmentColor" value="white" onchange="updateDTGDropdowns()" /> White Garments
         </label>
       </div>
     </div>
@@ -865,6 +613,28 @@
       </div>
       <div class="location-group">
         <label class="fulfill-checkbox-label" for="fulfillCustomLabel"><input type="checkbox" id="fulfillCustomLabel" /> Custom Label ($0.25)</label>
+      </div>
+    </div>
+    <div class="location-row">
+      <div class="location-group">
+        <label for="fulfillNames">Names:</label>
+        <select id="fulfillNames">
+          <option value="">-- None --</option>
+          <option value="trsf1">(TRSF) Up to 1" tall ($4.00)</option>
+          <option value="trsf2">(TRSF) Above 1" tall ($5.00)</option>
+          <option value="emb1">(EMB) Up to 1" tall ($5.50)</option>
+          <option value="emb2">(EMB) Over 1" tall ($7.50)</option>
+        </select>
+      </div>
+      <div class="location-group">
+        <label for="fulfillNumbers">Numbers:</label>
+        <select id="fulfillNumbers">
+          <option value="">-- None --</option>
+          <option value="trsf3">(TRSF) 2" to 8" tall ($3.00)</option>
+          <option value="trsf4">(TRSF) 10" to 12" tall ($4.00)</option>
+          <option value="emb3">(EMB) Up to 1" tall ($5.50)</option>
+          <option value="emb4">(EMB) Over 1" tall ($7.50)</option>
+        </select>
       </div>
     </div>
     <div class="location-row">
@@ -956,13 +726,15 @@
   ];
 
   const dtfPricing = {
-    "4x4": [2.95, 2.61, 2.56, 2.25, 1.65],
-    "8x8": [4.70, 3.90, 3.50, 3.00, 2.50],
-    "10x10": [6.75, 6.00, 5.50, 4.95, 4.25],
-    "11x14": [11.25, 9.55, 8.50, 7.50, 6.25]
+    "4x4": [2.95, 2.61, 2.56, 2.25, 1.65, 1.45],
+    "8x8": [4.20, 3.70, 3.10, 2.75, 2.15, 1.95],
+    "10x10": [6.35, 5.75, 5.25, 4.95, 4.25, 3.95],
+    "11x14": [10.25, 8.55, 7.80, 7.25, 6.25, 5.85]
   };
 
   function getDTFTier(quantity) {
+    if (quantity >= 1000) return 6;
+    if (quantity >= 500) return 5;
     if (quantity >= 250) return 4;
     if (quantity >= 100) return 3;
     if (quantity >= 50) return 2;
@@ -1107,7 +879,7 @@
       .catch(() => alert("Failed to copy. Try manually."));
   }
 
-  // Screen Printing Calculator - UPDATED PRICING
+  // Screen Printing Calculator
   const screenSizes = [
     { label: "None", value: "" },
     { label: "1 Color", value: "1color" },
@@ -1129,16 +901,15 @@
     "Left Shoulder", "Right Shoulder", "Back"
   ];
 
-  // Updated pricing based on the provided image
   const screenPricing = {
-    "1color": [4.39, 2.88, 1.57, 1.28, 1.11, 1.03, 0.95, 0.90, 0.80, 0.69, 0.66],
-    "2color": [5.59, 3.81, 2.44, 1.84, 1.41, 1.22, 1.02, 0.92, 0.88, 0.77, 0.73],
-    "3color": [7.26, 4.75, 3.17, 2.44, 1.64, 1.49, 1.12, 1.03, 0.95, 0.86, 0.79],
-    "4color": [9.66, 5.93, 3.99, 3.03, 2.02, 1.82, 1.47, 1.14, 1.01, 0.94, 0.83],
-    "5color": [11.94, 7.00, 4.76, 3.65, 2.45, 2.15, 1.73, 1.33, 1.17, 1.01, 0.92],
-    "6color": [14.23, 8.06, 5.72, 4.27, 2.90, 2.52, 1.99, 1.52, 1.33, 1.10, 1.00],
-    "7color": [14.82, 8.52, 6.00, 4.49, 3.06, 2.60, 2.07, 1.59, 1.37, 1.11, 1.02],
-    "8color": [15.12, 8.83, 6.23, 4.70, 3.20, 2.72, 2.15, 1.63, 1.41, 1.13, 1.07],
+    "1color": [3.99, 2.62, 1.43, 1.16, 1.01, 0.94, 0.86, 0.82, 0.73, 0.63, 0.60],
+    "2color": [5.08, 3.46, 2.22, 1.67, 1.28, 1.11, 0.97, 0.88, 0.80, 0.70, 0.66],
+    "3color": [6.60, 4.32, 2.88, 2.22, 1.49, 1.35, 1.12, 0.94, 0.86, 0.78, 0.72],
+    "4color": [9.20, 5.39, 3.63, 2.75, 1.84, 1.65, 1.34, 1.04, 0.92, 0.85, 0.75],
+    "5color": [11.17, 6.36, 4.33, 3.32, 2.23, 1.95, 1.57, 1.21, 1.06, 0.92, 0.84],
+    "6color": [13.21, 7.33, 5.20, 3.88, 2.64, 2.29, 1.81, 1.38, 1.21, 1.00, 0.91],
+    "7color": [13.82, 8.52, 6.00, 4.49, 3.06, 2.60, 2.07, 1.59, 1.37, 1.11, 1.02],
+    "8color": [14.32, 8.83, 6.23, 4.70, 3.20, 2.72, 2.15, 1.63, 1.41, 1.13, 1.07],
     "9color": [15.47, 10.04, 7.06, 5.31, 3.63, 3.10, 2.45, 1.88, 1.61, 1.30, 1.21],
     "10color": [16.63, 11.28, 8.01, 6.00, 4.08, 3.49, 2.81, 2.15, 1.89, 1.52, 1.40],
     "11color": [17.79, 12.63, 9.14, 6.78, 4.57, 3.94, 3.21, 2.47, 2.21, 1.79, 1.63],
@@ -1169,84 +940,45 @@
       return;
     }
 
+    const tier = getScreenTier(quantity);
     let totalCost = 0;
     let selectedLocations = [];
     let breakdown = `--- Screen Printing Quote ---\nQuantity: ${quantity}\n\nPrint Locations:\n`;
 
-    // Check if quantity is under 6
-    if (quantity < 6) {
-      // Under 6 pieces: $20.00 per color per location
-      for (let i = 1; i <= 6; i++) {
-        const select = document.getElementById(`screenLoc${i}`);
-        const colors = select.value;
-        
-        if (!colors) continue;
+    for (let i = 1; i <= 6; i++) {
+      const select = document.getElementById(`screenLoc${i}`);
+      const colors = select.value;
+      
+      if (!colors) continue;
 
-        const label = screenSizes.find(p => p.value === colors)?.label || colors;
-        const colorMatch = label.match(/(\d+)/);
-        const colorCount = colorMatch ? parseInt(colorMatch[1]) : 1;
-        
-        const locCost = 20.00 * colorCount;
-        totalCost += locCost;
+      const unitPrice = screenPricing[colors][tier];
+      const locCost = unitPrice * quantity;
+      totalCost += locCost;
 
-        selectedLocations.push({
-          name: screenLocations[i - 1],
-          colors: label,
-          colorCount: colorCount,
-          cost: locCost
-        });
-      }
-
-      if (totalCost === 0) {
-        alert("Please select at least one print location.");
-        return;
-      }
-
-      // Add print location costs for under 6 pieces
-      selectedLocations.forEach(location => {
-        breakdown += `${location.name} (${location.colors})\n`;
-        breakdown += `  ${location.colorCount} colors x $20.00 = $${location.cost.toFixed(2)}\n\n`;
-      });
-
-    } else {
-      // 6+ pieces: Use regular pricing tiers
-      const tier = getScreenTier(quantity);
-
-      for (let i = 1; i <= 6; i++) {
-        const select = document.getElementById(`screenLoc${i}`);
-        const colors = select.value;
-        
-        if (!colors) continue;
-
-        const unitPrice = screenPricing[colors][tier];
-        const locCost = unitPrice * quantity;
-        totalCost += locCost;
-
-        const label = screenSizes.find(p => p.value === colors)?.label || colors;
-        selectedLocations.push({
-          name: screenLocations[i - 1],
-          colors: label,
-          unitPrice: unitPrice,
-          cost: locCost
-        });
-      }
-
-      if (totalCost === 0) {
-        alert("Please select at least one print location.");
-        return;
-      }
-
-      // Add print location costs for 6+ pieces
-      selectedLocations.forEach(location => {
-        breakdown += `${location.name} (${location.colors})\n`;
-        breakdown += `  ${quantity} x $${location.unitPrice.toFixed(2)} = $${location.cost.toFixed(2)}\n\n`;
+      const label = screenSizes.find(p => p.value === colors)?.label || colors;
+      selectedLocations.push({
+        name: screenLocations[i - 1],
+        colors: label,
+        unitPrice: unitPrice,
+        cost: locCost
       });
     }
+
+    if (totalCost === 0) {
+      alert("Please select at least one print location.");
+      return;
+    }
+
+    // Add print location costs
+    selectedLocations.forEach(location => {
+      breakdown += `${location.name} (${location.colors})\n`;
+      breakdown += `  ${quantity} x $${location.unitPrice.toFixed(2)} = $${location.cost.toFixed(2)}\n\n`;
+    });
 
     // Fleece upcharge
     let fleeceSection = "";
     if (isFleece) {
-      const fleeceUpcharge = quantity < 100 ? 0.65 : 0.50;
+      const fleeceUpcharge = quantity < 100 ? 0.60 : 0.45;
       const fleeceTotal = fleeceUpcharge * selectedLocations.length * quantity;
       totalCost += fleeceTotal;
       fleeceSection = `Fleece Upcharge:\n  ${selectedLocations.length} locations x ${quantity} x $${fleeceUpcharge.toFixed(2)} = $${fleeceTotal.toFixed(2)}\n\n`;
@@ -1255,42 +987,10 @@
     // Non Standard Location upcharge
     let nonStandardSection = "";
     if (isNonStandard) {
-      const nonStandardUpcharge = quantity < 100 ? 0.55 : 0.40;
+      const nonStandardUpcharge = quantity < 100 ? 0.50 : 0.35;
       const nonStandardTotal = nonStandardUpcharge * selectedLocations.length * quantity;
       totalCost += nonStandardTotal;
       nonStandardSection = `Non Standard Location Upcharge:\n  ${selectedLocations.length} locations x ${quantity} x $${nonStandardUpcharge.toFixed(2)} = $${nonStandardTotal.toFixed(2)}\n\n`;
-    }
-
-    // Color Change Fee
-    let colorChangeSection = "";
-    const colorChanges = parseInt(document.getElementById("colorChangeSelect").value);
-    if (colorChanges > 0) {
-      const colorChangeFee = quantity < 100 ? 12.00 : 10.00;
-      const colorChangeTotal = colorChangeFee * colorChanges;
-      totalCost += colorChangeTotal;
-      colorChangeSection = `Color Change Fee:\n  ${colorChanges} x $${colorChangeFee.toFixed(2)} = $${colorChangeTotal.toFixed(2)}\n\n`;
-    }
-
-    // Transfer Numbers
-    let transferNumbersSection = "";
-    const transferPrice = parseFloat(document.getElementById("screenTransferNumbers").value);
-    const transferCount = parseInt(document.getElementById("screenTransferCount").value) || 0;
-    if (transferPrice && transferCount > 0) {
-      const transferTotal = transferPrice * transferCount;
-      totalCost += transferTotal;
-      const sizeLabel = transferPrice === 3.00 ? '2" to 8" tall' : '10" to 12" tall';
-      transferNumbersSection = `Transfer Numbers (${sizeLabel}):\n  ${transferCount} x $${transferPrice.toFixed(2)} = $${transferTotal.toFixed(2)}\n\n`;
-    }
-
-    // Transfer Names
-    let transferNamesSection = "";
-    const transferNamePrice = parseFloat(document.getElementById("screenTransferNames").value);
-    const transferNameCount = parseInt(document.getElementById("screenTransferNameCount").value) || 0;
-    if (transferNamePrice && transferNameCount > 0) {
-      const transferNameTotal = transferNamePrice * transferNameCount;
-      totalCost += transferNameTotal;
-      const nameSizeLabel = transferNamePrice === 4.00 ? 'Up to 1" tall' : 'Over 1" tall';
-      transferNamesSection = `Transfer Names (${nameSizeLabel}):\n  ${transferNameCount} x $${transferNamePrice.toFixed(2)} = $${transferNameTotal.toFixed(2)}\n\n`;
     }
 
     // Calculate setup fees (only if quantity is less than 100)
@@ -1349,9 +1049,6 @@
 
     breakdown += fleeceSection;
     breakdown += nonStandardSection;
-    breakdown += colorChangeSection;
-    breakdown += transferNumbersSection;
-    breakdown += transferNamesSection;
     breakdown += setupFeeSection;
     
     // Calculate final totals for display
@@ -1391,11 +1088,6 @@
     document.getElementById("screenApparelCost").value = "";
     document.getElementById("fleeceCheckbox").checked = false;
     document.getElementById("nonStandardCheckbox").checked = false;
-    document.getElementById("colorChangeSelect").value = "0";
-    document.getElementById("screenTransferNumbers").value = "";
-    document.getElementById("screenTransferCount").value = "";
-    document.getElementById("screenTransferNames").value = "";
-    document.getElementById("screenTransferNameCount").value = "";
     for (let i = 1; i <= 6; i++) {
       document.getElementById(`screenLoc${i}`).selectedIndex = 0;
       document.getElementById(`screenLoc${i}`).classList.remove('location-selected');
@@ -1423,38 +1115,45 @@
   }
 
   // DTG Calculator
-  const dtgSizes = [
+  const dtgSizesPretreated = [
     { label: "None", value: "" },
-    // Pre-treated apparel options
-    { label: "4x4", value: "4x4_pre", preTreated: true },
-    { label: "10x10", value: "10x10_pre", preTreated: true },
-    { label: "11x15", value: "11x15_pre", preTreated: true },
-    // Non pre-treated apparel options
-    { label: "4\"x4\" White", value: "4x4white_non", preTreated: false },
-    { label: "4\"x4\" Dark", value: "4x4dark_non", preTreated: false },
-    { label: "10\"x10\" White", value: "10x10white_non", preTreated: false },
-    { label: "10\"x10\" Dark", value: "10x10dark_non", preTreated: false },
-    { label: "11\"x15\" White", value: "11x15white_non", preTreated: false },
-    { label: "11\"x15\" Dark", value: "11x15dark_non", preTreated: false }
+    { label: "4\" x 4\"", value: "4x4" },
+    { label: "10\" x 10\"", value: "10x10" },
+    { label: "11\" x 15\"", value: "11x15" }
   ];
+
+  const dtgSizesNonPretreated = [
+    { label: "None", value: "" },
+    { label: "4\" x 4\"", value: "4x4" },
+    { label: "10\" x 10\"", value: "10x10" },
+    { label: "11\" x 15\"", value: "11x15" }
+  ];
+
+  // Keep dtgSizes as default for dropdown population
+  let dtgSizes = dtgSizesNonPretreated;
 
   const dtgLocations = [
     "Left Chest", "Center Chest", "Right Chest",
     "Left Shoulder", "Right Shoulder", "Back"
   ];
 
-  const dtgPricing = {
-    // Pre-treated apparel pricing
-    "4x4_pre": [4.25, 4.00, 3.80],
-    "10x10_pre": [6.50, 6.00, 5.65],
-    "11x15_pre": [7.00, 6.50, 6.25],
-    // Non pre-treated apparel pricing
-    "4x4white_non": [5.25, 5.00, 4.80],
-    "4x4dark_non": [6.00, 5.75, 5.50],
-    "10x10white_non": [7.50, 7.00, 6.65],
-    "10x10dark_non": [8.75, 8.25, 8.00],
-    "11x15white_non": [8.00, 7.50, 7.25],
-    "11x15dark_non": [10.00, 9.25, 9.00]
+  // Pricing: [4-25, 26-49, 50+]
+  const dtgPricingPretreated = {
+    "4x4":   [4.25, 4.00, 3.80],
+    "10x10": [6.50, 6.00, 5.65],
+    "11x15": [7.00, 6.50, 6.25]
+  };
+
+  const dtgPricingNonPretreatedWhite = {
+    "4x4":   [5.25, 5.00, 4.80],
+    "10x10": [7.50, 7.00, 6.65],
+    "11x15": [8.00, 7.50, 7.25]
+  };
+
+  const dtgPricingNonPretreatedDark = {
+    "4x4":   [6.00, 5.75, 5.50],
+    "10x10": [8.75, 8.25, 8.00],
+    "11x15": [10.00, 9.25, 9.00]
   };
 
   function getDTGTier(quantity) {
@@ -1463,64 +1162,66 @@
     return 0;
   }
 
-  function handleDTGApparelType(type) {
-    const preTreatedCheckbox = document.getElementById('dtgPreTreated');
-    const nonPreTreatedCheckbox = document.getElementById('dtgNonPreTreated');
-    
-    if (type === 'pre') {
-      if (preTreatedCheckbox.checked) {
-        nonPreTreatedCheckbox.checked = false;
-      }
-    } else if (type === 'non') {
-      if (nonPreTreatedCheckbox.checked) {
-        preTreatedCheckbox.checked = false;
-      }
+  function getDTGApparelType() {
+    const radios = document.getElementsByName('dtgApparelType');
+    for (const r of radios) {
+      if (r.checked) return r.value;
     }
-    
-    // Update all DTG location dropdowns
-    updateDTGDropdowns();
+    return 'nonpretreated';
+  }
+
+  function getDTGGarmentColor() {
+    const radios = document.getElementsByName('dtgGarmentColor');
+    for (const r of radios) {
+      if (r.checked) return r.value;
+    }
+    return 'dark';
+  }
+
+  function getDTGPricing() {
+    const apparelType = getDTGApparelType();
+    if (apparelType === 'pretreated') {
+      return dtgPricingPretreated;
+    } else {
+      const color = getDTGGarmentColor();
+      return color === 'dark' ? dtgPricingNonPretreatedDark : dtgPricingNonPretreatedWhite;
+    }
   }
 
   function updateDTGDropdowns() {
-    const preTreatedChecked = document.getElementById('dtgPreTreated').checked;
-    const nonPreTreatedChecked = document.getElementById('dtgNonPreTreated').checked;
-    
+    const apparelType = getDTGApparelType();
+    const colorGroup = document.getElementById('dtgGarmentColorGroup');
+
+    if (apparelType === 'nonpretreated') {
+      colorGroup.style.display = 'block';
+      dtgSizes = dtgSizesNonPretreated;
+    } else {
+      colorGroup.style.display = 'none';
+      dtgSizes = dtgSizesPretreated;
+    }
+
+    // Repopulate DTG dropdowns
     for (let i = 1; i <= 6; i++) {
-      const select = document.getElementById(`dtgLoc${i}`);
-      if (select) {
-        const currentValue = select.value;
-        select.innerHTML = '';
-        
+      const dtgSelect = document.getElementById(`dtgLoc${i}`);
+      if (dtgSelect) {
+        const currentValue = dtgSelect.value;
+        dtgSelect.innerHTML = '';
         dtgSizes.forEach(size => {
-          // Show "None" option always
-          if (size.value === "") {
-            const option = document.createElement("option");
-            option.value = size.value;
-            option.textContent = size.label;
-            select.appendChild(option);
-          }
-          // Show pre-treated options only if pre-treated is checked
-          else if (preTreatedChecked && size.preTreated === true) {
-            const option = document.createElement("option");
-            option.value = size.value;
-            option.textContent = size.label;
-            select.appendChild(option);
-          }
-          // Show non pre-treated options only if non pre-treated is checked
-          else if (nonPreTreatedChecked && size.preTreated === false) {
-            const option = document.createElement("option");
-            option.value = size.value;
-            option.textContent = size.label;
-            select.appendChild(option);
-          }
+          const option = document.createElement("option");
+          option.value = size.value;
+          option.textContent = size.label;
+          dtgSelect.appendChild(option);
         });
-        
-        // Try to restore previous value if it's still available
-        if (currentValue && Array.from(select.options).some(opt => opt.value === currentValue)) {
-          select.value = currentValue;
+        // Restore selection if still valid
+        const validValues = dtgSizes.map(s => s.value);
+        if (validValues.includes(currentValue)) {
+          dtgSelect.value = currentValue;
+        } else {
+          dtgSelect.selectedIndex = 0;
         }
       }
     }
+    initializeDropdownColors();
   }
 
   function calculateDTG() {
@@ -1532,8 +1233,18 @@
     }
 
     const tier = getDTGTier(quantity);
+    const pricing = getDTGPricing();
+    const apparelType = getDTGApparelType();
     let totalCost = 0;
-    let breakdown = `--- DTG Printing Quote ---\nQuantity: ${quantity}\n\n`;
+
+    // Build header
+    let typeLabel = "Pre-Treated Shirts";
+    if (apparelType === 'nonpretreated') {
+      const color = getDTGGarmentColor();
+      typeLabel = color === 'dark' ? "Non Pre-Treated (Dark Garments)" : "Non Pre-Treated (White Garments)";
+    }
+
+    let breakdown = `--- DTG Printing Quote ---\nQuantity: ${quantity}\nType: ${typeLabel}\n\n`;
 
     for (let i = 1; i <= 6; i++) {
       const select = document.getElementById(`dtgLoc${i}`);
@@ -1541,7 +1252,7 @@
       
       if (!size) continue;
 
-      const unitPrice = dtgPricing[size][tier];
+      const unitPrice = pricing[size][tier];
       const locCost = unitPrice * quantity;
       totalCost += locCost;
 
@@ -1627,19 +1338,28 @@
   function resetDTG() {
     document.getElementById("dtgQuantity").value = "";
     document.getElementById("dtgApparelCost").value = "";
-    document.getElementById("dtgPreTreated").checked = false;
-    document.getElementById("dtgNonPreTreated").checked = false;
+    // Reset radio buttons to defaults
+    document.querySelector('input[name="dtgApparelType"][value="nonpretreated"]').checked = true;
+    document.querySelector('input[name="dtgGarmentColor"][value="dark"]').checked = true;
+    document.getElementById('dtgGarmentColorGroup').style.display = 'block';
+    // Reset dropdowns
+    dtgSizes = dtgSizesNonPretreated;
     for (let i = 1; i <= 6; i++) {
-      document.getElementById(`dtgLoc${i}`).selectedIndex = 0;
-      document.getElementById(`dtgLoc${i}`).classList.remove('location-selected');
-      // Remove class from the corresponding label
-      const label = document.getElementById(`dtgLoc${i}`).previousElementSibling;
+      const dtgSelect = document.getElementById(`dtgLoc${i}`);
+      dtgSelect.innerHTML = '';
+      dtgSizesNonPretreated.forEach(size => {
+        const option = document.createElement("option");
+        option.value = size.value;
+        option.textContent = size.label;
+        dtgSelect.appendChild(option);
+      });
+      dtgSelect.selectedIndex = 0;
+      dtgSelect.classList.remove('location-selected');
+      const label = dtgSelect.previousElementSibling;
       if (label && label.tagName === 'LABEL') {
         label.classList.remove('location-label-selected');
       }
     }
-    // Reset dropdowns to show only "None" option
-    updateDTGDropdowns();
     const output = document.getElementById("dtgOutput");
     output.textContent = "";
     output.classList.add("hidden");
@@ -1670,30 +1390,29 @@
     { label: "5,001–6,000", min: 5001, max: 6000 },
     { label: "6,001–7,000", min: 6001, max: 7000 },
     { label: "7,001–8,000", min: 7001, max: 8000 },
-    { label: "8,001–9,000", min: 8001, max: 9000 },
     { label: "9,001–10,000", min: 9001, max: 10000 },
     { label: "10,001–11,000", min: 10001, max: 11000 },
     { label: "11,001–12,000", min: 11001, max: 12000 },
-    { label: "12,001–13,000", min: 12001, max: 13000 }
+    { label: "12,001–13,000", min: 12001, max: 13000 },
+    { label: "13,001+", min: 13001, max: Infinity }
   ];
 
-  const embQuantityBrackets = [1, 18, 42, 72, 144, 288, 600, 1000, 1500];
+  const embQuantityBrackets = [6, 24, 42, 72, 144, 288, 600, 1000];
 
   const embPricingMatrix = {
-    "0–3000": [5.17, 3.19, 3.00, 2.58, 2.34, 2.27, 2.25, 2.22, 1.90],
-    "3001–4000": [5.44, 3.36, 3.18, 2.98, 2.86, 2.76, 2.67, 2.62, 2.25],
-    "4001–5000": [6.44, 3.74, 3.53, 3.32, 3.15, 3.04, 2.97, 2.91, 2.50],
-    "5001–6000": [6.57, 4.16, 3.94, 3.66, 3.57, 3.46, 3.34, 3.16, 2.71],
-    "6001–7000": [7.08, 4.50, 4.21, 3.92, 3.86, 3.81, 3.78, 3.58, 3.07],
-    "7001–8000": [7.50, 4.80, 4.54, 4.25, 4.21, 4.16, 4.11, 3.87, 3.33],
-    "8001–9000": [7.95, 5.31, 4.88, 4.63, 4.57, 4.53, 4.50, 4.24, 3.64],
-    "9001–10000": [8.32, 5.74, 5.23, 5.09, 5.04, 4.96, 4.93, 4.59, 3.94],
-    "10001–11000": [9.06, 6.13, 5.63, 5.56, 5.47, 5.33, 5.24, 5.07, 4.36],
-    "11001–12000": [9.38, 6.58, 6.03, 5.95, 5.89, 5.70, 5.65, 5.30, 4.56],
-    "12001–13000": [10.10, 7.00, 6.48, 6.45, 6.32, 6.19, 6.12, 5.71, 4.91]
+    "0–3000": [4.93, 3.04, 2.86, 2.46, 2.23, 2.17, 2.15, 2.12],
+    "3001–4000": [5.19, 3.20, 3.03, 2.84, 2.73, 2.63, 2.55, 2.50],
+    "4001–5000": [5.85, 3.57, 3.37, 3.17, 3.00, 2.90, 2.83, 2.78],
+    "5001–6000": [6.26, 3.97, 3.76, 3.49, 3.40, 3.30, 3.19, 3.01],
+    "6001–7000": [6.75, 4.29, 4.01, 3.74, 3.68, 3.63, 3.60, 3.41],
+    "7001–8000": [7.15, 4.58, 4.33, 4.05, 4.01, 3.97, 3.92, 3.69],
+    "9001–10000": [7.93, 5.47, 4.99, 4.85, 4.80, 4.73, 4.70, 4.38],
+    "10001–11000": [8.63, 5.84, 5.37, 5.30, 5.21, 4.90, 5.11, 4.83],
+    "11001–12000": [8.94, 6.27, 5.75, 5.67, 5.61, 5.14, 5.39, 5.05],
+    "12001–13000": [9.62, 6.67, 6.18, 6.15, 6.02, 5.90, 5.83, 5.44]
   };
 
-  const embAdditionalPricing = [0.99, 0.40, 0.39, 0.38, 0.37, 0.36, 0.35, 0.34, 0.33];
+  const embAdditionalPricing = [0.40, 0.39, 0.38, 0.37, 0.36, 0.35, 0.34, 0.33];
 
   function getEmbQtyIndex(qty) {
     for (let i = embQuantityBrackets.length - 1; i >= 0; i--) {
@@ -1746,56 +1465,6 @@
     if (totalCost === 0) {
       alert("Please select at least one stitch range.");
       return;
-    }
-
-    // Apply $20 minimum order charge if needed
-    const originalTotal = totalCost;
-    if (originalTotal < 20) {
-      breakdown += `Subtotal: $${originalTotal.toFixed(2)}\n`;
-      breakdown += `Minimum Order Applied: $20.00 Minimum\n\n`;
-      totalCost = 20.00;
-    }
-
-    // Thread Color Change Fee
-    let threadColorChangeSection = "";
-    const threadColorChanges = parseInt(document.getElementById("embThreadColorChange").value);
-    if (threadColorChanges > 0) {
-      const threadColorChangeFee = 5.00;
-      const threadColorChangeTotal = threadColorChangeFee * threadColorChanges;
-      totalCost += threadColorChangeTotal;
-      threadColorChangeSection = `Thread Color Change Fee:\n  ${threadColorChanges} x $${threadColorChangeFee.toFixed(2)} = $${threadColorChangeTotal.toFixed(2)}\n\n`;
-    }
-
-    // Embroidered Names
-    let embNameSection = "";
-    const namePrice = parseFloat(document.getElementById("embNameSize").value);
-    const nameCount = parseInt(document.getElementById("embNameCount").value) || 0;
-    if (namePrice && nameCount > 0) {
-      const nameTotal = namePrice * nameCount;
-      totalCost += nameTotal;
-      const sizeLabel = namePrice === 5.50 ? 'Up to 1" tall' : 'Over 1" tall';
-      embNameSection = `Embroidered Names (${sizeLabel}):\n  ${nameCount} x $${namePrice.toFixed(2)} = $${nameTotal.toFixed(2)}\n\n`;
-    }
-
-    // Sewing Patches
-    let sewingPatchSection = "";
-    const patchType = document.getElementById("embPatchType").value;
-    const patchCount = parseInt(document.getElementById("embPatchCount").value) || 0;
-    if (patchType && patchCount > 0) {
-      let patchPrice = 0;
-      let patchLabel = "";
-      
-      if (patchType === "sp") {
-        patchPrice = quantity < 100 ? 2.00 : 1.50;
-        patchLabel = "SP Provided Patches";
-      } else if (patchType === "we") {
-        patchPrice = quantity < 100 ? 3.00 : 2.25;
-        patchLabel = "We Provide Patches";
-      }
-      
-      const patchTotal = patchPrice * patchCount;
-      totalCost += patchTotal;
-      sewingPatchSection = `Sewing Patches (${patchLabel}):\n  ${patchCount} x $${patchPrice.toFixed(2)} = $${patchTotal.toFixed(2)}\n\n`;
     }
 
     // Apparel cost calculation
@@ -1853,9 +1522,6 @@
     
     const totalCostPerItem = decorationCostPerItem + apparelCostPerItem + markupPerItem;
     
-    breakdown += threadColorChangeSection;
-    breakdown += embNameSection;
-    breakdown += sewingPatchSection;
     breakdown += `<strong style="color: red;">Decoration Cost Total: $${totalCost.toFixed(2)} ($${decorationCostPerItem.toFixed(2)} per item)</strong><br>`;
     if (apparelCost > 0) {
       breakdown += `<strong style="color: #00ff00;">Apparel Cost Total: $${(apparelCost * quantity).toFixed(2)} ($${apparelCostPerItem.toFixed(2)} per item)</strong><br>`;
@@ -1872,11 +1538,6 @@
   function resetEmbroidery() {
     document.getElementById("embQuantity").value = "";
     document.getElementById("embApparelCost").value = "";
-    document.getElementById("embThreadColorChange").value = "0";
-    document.getElementById("embNameSize").value = "";
-    document.getElementById("embNameCount").value = "";
-    document.getElementById("embPatchType").value = "";
-    document.getElementById("embPatchCount").value = "";
     for (let i = 1; i <= 6; i++) {
       document.getElementById(`embLoc${i}`).selectedIndex = 0;
       document.getElementById(`embLoc${i}`).classList.remove('location-selected');
@@ -1950,11 +1611,12 @@
       if (dtgSelect) {
         // Clear existing options
         dtgSelect.innerHTML = '';
-        // Only add "None" option initially until user selects apparel type
-        const option = document.createElement("option");
-        option.value = "";
-        option.textContent = "None";
-        dtgSelect.appendChild(option);
+        dtgSizes.forEach(size => {
+          const option = document.createElement("option");
+          option.value = size.value;
+          option.textContent = size.label;
+          dtgSelect.appendChild(option);
+        });
       }
     }
     
@@ -2011,11 +1673,6 @@
 
     const embInputs = [document.getElementById("embQuantity"),
       document.getElementById("embApparelCost"),
-      document.getElementById("embThreadColorChange"),
-      document.getElementById("embNameSize"),
-      document.getElementById("embNameCount"),
-      document.getElementById("embPatchType"),
-      document.getElementById("embPatchCount"),
       ...Array.from({ length: 6 }, (_, i) => document.getElementById(`embLoc${i + 1}`))];
     embInputs.forEach(input => {
       if (input) {
@@ -2033,11 +1690,6 @@
       document.getElementById("screenApparelCost"),
       document.getElementById("fleeceCheckbox"),
       document.getElementById("nonStandardCheckbox"),
-      document.getElementById("colorChangeSelect"),
-      document.getElementById("screenTransferNumbers"),
-      document.getElementById("screenTransferCount"),
-      document.getElementById("screenTransferNames"),
-      document.getElementById("screenTransferNameCount"),
       ...Array.from({ length: 6 }, (_, i) => document.getElementById(`screenLoc${i + 1}`))];
     screenInputs.forEach(input => {
       if (input) {
@@ -2066,17 +1718,35 @@
     });
 
     // Fulfillment Calculator mutual exclusivity logic
+    const fulfillNames = document.getElementById('fulfillNames');
+    const fulfillNumbers = document.getElementById('fulfillNumbers');
     const fulfillLaser = document.getElementById('fulfillLaser');
 
     function updateFulfillmentExclusivity() {
-      // No mutual exclusivity needed anymore since Names and Numbers are removed
+      if (fulfillLaser.value) {
+        fulfillNames.value = '';
+        fulfillNumbers.value = '';
+        fulfillNames.disabled = true;
+        fulfillNumbers.disabled = true;
+      } else {
+        fulfillNames.disabled = false;
+        fulfillNumbers.disabled = false;
+      }
+      if (fulfillNames.value || fulfillNumbers.value) {
+        fulfillLaser.value = '';
+        fulfillLaser.disabled = true;
+      } else {
+        fulfillLaser.disabled = false;
+      }
     }
     fulfillLaser.addEventListener('change', updateFulfillmentExclusivity);
+    fulfillNames.addEventListener('change', updateFulfillmentExclusivity);
+    fulfillNumbers.addEventListener('change', updateFulfillmentExclusivity);
 
     // Fulfillment Calculator: Enter key triggers calculation
     const fulfillFormElements = [
               'fulfillQuantity', 'fulfillFoldBag', 'fulfillOversized', 'fulfillCustomLabel',
-      'fulfillLaser', 'fulfillHangTag',
+      'fulfillNames', 'fulfillNumbers', 'fulfillLaser', 'fulfillHangTag',
       'fulfillClipTags', 'fulfillInsideTag', ...Array.from(document.querySelectorAll('.fulfillSize')).map(cb => cb.id)
     ];
     fulfillFormElements.forEach(id => {
@@ -2125,6 +1795,12 @@
   });
   
   // Add event listeners for dropdowns and size checkboxes
+  document.getElementById('fulfillNames').addEventListener('change', function() {
+    calculateFulfillment();
+  });
+  document.getElementById('fulfillNumbers').addEventListener('change', function() {
+    calculateFulfillment();
+  });
   document.getElementById('fulfillLaser').addEventListener('change', function() {
     calculateFulfillment();
   });
@@ -2247,6 +1923,32 @@
       breakdown += `Inside Tag (DTF): ${quantity} x $${quantity < 100 ? '1.50' : '1.40'} = $${dtfCost.toFixed(2)}\n`;
       total += dtfCost;
     }
+    // Names
+    const namesValue = document.getElementById('fulfillNames').value;
+    if (namesValue) {
+      let price = 0;
+      let label = '';
+      if (namesValue === 'trsf1') { price = 4.00; label = '(TRSF) Up to 1\" tall'; }
+      if (namesValue === 'trsf2') { price = 5.00; label = '(TRSF) Above 1\" tall'; }
+      if (namesValue === 'emb1') { price = 5.50; label = '(EMB) Up to 1\" tall'; }
+      if (namesValue === 'emb2') { price = 7.50; label = '(EMB) Over 1\" tall'; }
+      const cost = quantity * price;
+      breakdown += `Names ${label}: ${quantity} x $${price.toFixed(2)} = $${cost.toFixed(2)}\n`;
+      total += cost;
+    }
+    // Numbers
+    const numbersValue = document.getElementById('fulfillNumbers').value;
+    if (numbersValue) {
+      let price = 0;
+      let label = '';
+      if (numbersValue === 'trsf3') { price = 3.00; label = '(TRSF) 2\" to 8\" tall'; }
+      if (numbersValue === 'trsf4') { price = 4.00; label = '(TRSF) 10\" to 12\" tall'; }
+      if (numbersValue === 'emb3') { price = 5.50; label = '(EMB) Up to 1\" tall'; }
+      if (numbersValue === 'emb4') { price = 7.50; label = '(EMB) Over 1\" tall'; }
+      const cost = quantity * price;
+      breakdown += `Numbers ${label}: ${quantity} x $${price.toFixed(2)} = $${cost.toFixed(2)}\n`;
+      total += cost;
+    }
     // Laser Engraving
     const laserValue = document.getElementById('fulfillLaser').value;
     if (laserValue) {
@@ -2289,8 +1991,12 @@
     document.getElementById('fulfillHangTag').checked = false;
     document.getElementById('fulfillClipTags').checked = false;
     document.getElementById('fulfillInsideTag').selectedIndex = 0;
+    document.getElementById('fulfillNames').selectedIndex = 0;
+    document.getElementById('fulfillNumbers').selectedIndex = 0;
     document.getElementById('fulfillLaser').selectedIndex = 0;
     document.getElementById('fulfillLaser').disabled = false;
+    document.getElementById('fulfillNames').disabled = false;
+    document.getElementById('fulfillNumbers').disabled = false;
     document.getElementById('fulfillSizesGroup').style.display = 'none';
     document.querySelectorAll('.fulfillSize').forEach(cb => cb.checked = false);
     const output = document.getElementById('fulfillmentOutput');
